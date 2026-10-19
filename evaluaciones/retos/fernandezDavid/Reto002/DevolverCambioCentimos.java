@@ -3,7 +3,6 @@ class ClaseJava {
 
         java.util.Scanner sc = new java.util.Scanner(System.in);
 
-        // Aceptar coma como separador decimal (23,45)
         sc.useLocale(java.util.Locale.GERMANY);
 
         System.out.println("¿Cuántos euros debe pagar? (ej: 23,45)");
@@ -12,24 +11,20 @@ class ClaseJava {
         System.out.println("¿Con cuántos euros paga? (ej: 50,00)");
         double paga = sc.nextDouble();
 
-        // Convertir a céntimos con redondeo correcto
         int pagarCent = (int) Math.round(pagar * 100);
         int pagaCent = (int) Math.round(paga * 100);
 
         int cambio = pagaCent - pagarCent;
 
-        // Billetes (en céntimos)
         int b100 = cambio / 10000; cambio = cambio % 10000;
         int b50  = cambio / 5000;  cambio = cambio % 5000;
         int b20  = cambio / 2000;  cambio = cambio % 2000;
         int b10  = cambio / 1000;  cambio = cambio % 1000;
         int b5   = cambio / 500;   cambio = cambio % 500;
 
-        // Monedas de euro
         int m2e = cambio / 200; cambio = cambio % 200;
         int m1e = cambio / 100; cambio = cambio % 100;
 
-        // Monedas de céntimos
         int c50 = cambio / 50; cambio = cambio % 50;
         int c20 = cambio / 20; cambio = cambio % 20;
         int c10 = cambio / 10; cambio = cambio % 10;
